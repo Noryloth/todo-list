@@ -1,0 +1,41 @@
+/* CSS Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* General */
+body {
+    font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: oklch(37.3% 0.034 259.733);
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 100vh;
+}
+
+
+/* Containers */
+.left-container {
+    background-color: hsl(210, 33%, 98%);
+    padding: 2rem;
+}
+
+.right-container {
+    background-color:rgb(255, 255, 255);
+    padding: 5rem;
+}
+
+
+/* Left container links */
+.profile {
+    font-size: 1.15rem;
+}
+
+
+.first-links {
+    display: grid;
+    gap: 14px;
+    margin: 2rem 0 2rem 0;
+}
