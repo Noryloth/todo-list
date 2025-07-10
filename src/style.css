@@ -50,3 +50,98 @@ body {
     background-color: rgb(228, 240, 245);
     cursor: pointer;
 }
+
+
+/* Right container tasks list */
+.right-container h2 {
+    color: rgb(45, 45, 45);
+}
+
+.heading {
+    padding: 2em 0 0.25em 0;
+    font-weight: 550;
+}
+
+.task-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 0.75em 0 0.75em 0;
+    margin: 0.5em 0 0.5em 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.214);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.214);
+}
+
+.task-item:nth-child(n+2) {
+    border-top: none;
+    padding-top: 0.25em;
+}
+
+.description {
+    font-size: 0.75em;
+}
+
+.date {
+    font-size: 0.5em;
+}
+
+.no-tasks-message {
+    font-size: 0.85em;
+    color: oklch(37.306% 0.03436 260.191 / 0.64);
+    padding: 1em 0 1em 0;
+}
+
+
+/* Dialog form */
+dialog {
+    justify-self: center;
+    align-self: center;
+    padding: 2rem;
+    background-color: rgb(250, 252, 255);
+    color: oklch(37.3% 0.034 259.733);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.164);
+}
+
+dialog form {
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+form input, form textarea {
+    padding: 0.5em;
+    border-radius: 8px;
+    border: none;
+    background-color: rgb(232, 238, 249);
+    color: oklch(37.3% 0.034 259.733);
+}
+
+.form-buttons {
+    display: flex;
+    grid-column: 1 / 3;
+    justify-self: flex-end;
+    margin: 0.5em 0 0 0;
+    gap: 8px;
+}
+
+form button {
+    font-size: 0.85em;
+    padding: 0.3em 0.4em;
+    color: oklch(37.3% 0.034 259.733);
+    background-color: rgb(232, 238, 249);
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: rgb(218, 223, 232);
+}
+
+form button:active {
+    background-color: rgb(208, 212, 221);
+    margin: 0.1em 0 -0.1em 0;
+}
