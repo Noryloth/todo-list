@@ -4,6 +4,7 @@ import "./style.css";
 
 // DOM
 const addTaskBtn = document.querySelector('.add-task');
+const addTaskBtn2 = document.querySelector('.add-task-second')
 const closeBtn = document.querySelector('.close-button');
 const submitBtn = document.querySelector('.submit-button');
 const dialog = document.getElementById('dialog');
@@ -26,14 +27,17 @@ class Task {
 
 
 // Display a message if there are no tasks
-if (tasks.innerHTML === '') {
-    const noTasksMessage = document.createElement('p');
-    noTasksMessage.className = 'no-tasks-message';
+function displayNoTasksMessage() {
+    if (tasks.innerHTML === '') {
+        const noTasksMessage = document.createElement('p');
+        noTasksMessage.className = 'no-tasks-message';
 
-    noTasksMessage.innerHTML = `There are no tasks here yet... Click "Add task" button to create a new task!`
+        noTasksMessage.innerHTML = `There are no tasks here yet... Click "Add task" button to create a new task!`
 
-    tasks.appendChild(noTasksMessage);
+        tasks.appendChild(noTasksMessage);
+    }
 }
+
 
 
 // Display tasks in the right container
@@ -43,23 +47,48 @@ function displayTasks(myTasks) {
     for (let i = 0; i < myTasks.length; i++) {
         const task = myTasks[i];
         const taskItem = document.createElement('div');
+        const taskText = document.createElement('div');
+        const taskRadio = document.createElement('div');
+        const taskInfo = document.createElement('div');
+        const removeBtn = document.createElement('div');
         taskItem.className = "task-item";
+        taskText.className = "task-text";
+        taskRadio.className = "task-radio";
+        taskInfo.className = "task-info";
+        removeBtn.className = "remove-task"
 
-        taskItem.innerHTML = `
+        taskRadio.innerHTML = `
+            <input type="radio" id="${task.id}" name="task-radio" onchange="completeTask(${i})">
+        `
+
+        taskText.innerHTML = `
+            
             <p class="title">${task.title}</p>
             <p class="description">${task.description}</p>
             <p class="date">${task.date}</p>
         `
 
+        removeBtn.innerHTML = `
+            <button class="remove-task-button" onclick="removeTask(${i})">Remove task</button>
+        `
+
+        taskInfo.appendChild(taskRadio);
+        taskInfo.appendChild(taskText);
+        taskItem.appendChild(taskInfo);
+        taskItem.appendChild(removeBtn);
         tasks.appendChild(taskItem);
     }
 }
 
 
 // Add new task button
-addTaskBtn.addEventListener("click", () => {
+function handleButtonClick() {
     dialog.showModal();
-})
+}
+
+addTaskBtn.addEventListener("click", handleButtonClick);
+addTaskBtn2.addEventListener("click", handleButtonClick);
+
 
 // Close form button
 closeBtn.addEventListener("click", (event) => {
@@ -100,3 +129,26 @@ function clearForm() {
     document.getElementById('task-description').value = '';
     document.getElementById('task-date').value = '';
 }
+
+
+// Remove task
+globalThis.removeTask = removeTask;
+
+function removeTask(i) {
+    myTasks.splice(i, 1);
+    displayTasks(myTasks);
+    displayNoTasksMessage();
+}
+
+
+// Complete task
+globalThis.completeTask = completeTask;
+
+function completeTask(i) {
+    myTasks.splice(i, 1);
+    displayTasks(myTasks);
+    alert("Task is completed!");
+    displayNoTasksMessage();
+}
+
+displayNoTasksMessage();
