@@ -36,7 +36,7 @@ body {
     margin: 2rem 0 2rem 0;
 }
 
-.first-links p {
+.first-links p, .add-task-second p {
     border-radius: 8px;
     padding: 0.25em 0.25em 0.25em 0;
 }
@@ -51,6 +51,9 @@ body {
     cursor: pointer;
 }
 
+.second-links p:first-of-type {
+    font-weight: 600;
+}
 
 /* Right container tasks list */
 .right-container h2 {
@@ -62,9 +65,18 @@ body {
     font-weight: 550;
 }
 
+.task-radio input[type="radio"] {
+    width: 15px;
+    height: 15px;
+}
+
+.task-radio input[type="radio"]:checked {
+    accent-color:  rgb(61, 150, 198);
+}
+
 .task-item {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 6fr 1fr;
     gap: 6px;
     padding: 0.75em 0 0.75em 0;
     margin: 0.5em 0 0.5em 0;
@@ -79,16 +91,32 @@ body {
 
 .description {
     font-size: 0.75em;
+    color: oklch(37.306% 0.03436 260.191 / 0.734);
 }
 
 .date {
     font-size: 0.5em;
+    color: oklch(37.306% 0.03436 260.191 / 0.734);
 }
 
 .no-tasks-message {
     font-size: 0.85em;
     color: oklch(37.306% 0.03436 260.191 / 0.64);
     padding: 1em 0 1em 0;
+}
+
+.add-task-second {
+    color: oklch(37.306% 0.03436 260.191 / 0.412);
+}
+
+.add-task-second p:hover {
+    background-color: rgba(228, 240, 245, 0.407);
+    cursor: pointer;
+}
+
+.task-info {
+    display: flex;
+    gap: 8px;
 }
 
 
@@ -144,4 +172,32 @@ form button:hover {
 form button:active {
     background-color: rgb(208, 212, 221);
     margin: 0.1em 0 -0.1em 0;
+}
+
+
+/* Remove task button */
+.remove-task {
+    display: flex;
+    justify-self: flex-end;
+    align-self: center;
+}
+
+.remove-task-button {
+    padding: 0.5em 1.5em;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.7em;
+    min-width: 130px;
+    background-color: rgb(246, 225, 225);
+    font-weight: 550;
+}
+
+.remove-task-button:hover {
+    background-color: rgba(246, 225, 225, 0.727);
+    cursor: pointer;
+}
+
+.remove-task-button:active {
+    margin: 0.1em 0 -0.1em 0;
+    background-color: rgba(246, 225, 225, 0.577);
 }
