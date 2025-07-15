@@ -8,21 +8,55 @@
   <body>
     <div class="left-container">
       <div class="profile">
-        <p>Your name</p>
+        <img src="account-box.png" alt="Account">
+        <p class="name-input" contenteditable="true">Your name</p>
       </div>
       <div class="first-links">
-        <p class="add-task">Add task</p>
-        <p>Search</p>
-        <p>Today</p>
-        <p>View All</p>
+        <div class="add-task-div">
+          <img src="output-onlinepngtools.png" alt="Add task" />
+          <p class="add-task">Add task</p>
+        </div>
+        <div class="search-div">
+          <input type="search" name="search-bar" id="search" class="search-bar" placeholder="Search task..." />
+          <button class="search-button"><img src="magnify.png" alt="Search" /></button>
+        </div>
+        <div class="today-div">
+          <img src="calendar-today.png" alt="Today" />
+          <p class="today">Today</p>
+        </div>
+        <div class="view-all-div">
+          <img src="notification-clear-all.png" alt="View All" />
+          <p class="category" data-id="All">View All</p>
+        </div>
       </div>
       <div class="second-links">
-        <p>My Projects</p>
+        <p class="projects-heading">My Projects</p>
+        <div class="fitness-div">
+          <img src="pound.png" alt="Fitness" />
+          <p class="category" data-id="Fitness">Fitness</p>
+        </div>
+        <div class="groceries-div">
+          <img src="pound.png" alt="Fitness" />
+          <p class="category" data-id="Groceries">Groceries</p>
+        </div>
+        <div class="appointments-div">
+          <img src="pound.png" alt="Fitness" />
+          <p class="category" data-id="Appointments">Appointments</p>
+        </div>
+        <div class="work-div">
+          <img src="pound.png" alt="Fitness" />
+          <p class="category" data-id="Work">Work</p>
+        </div>
+        <div class="misc-div">
+          <img src="pound.png" alt="Fitness" />
+          <p class="category" data-id="Miscellaneous">Miscellaneous</p>
+        </div>
+        <p></p>
       </div>
     </div>
     <div class="right-container">
-      <h2>Tasks List</h2>
-      <p class="heading">My projects</p>
+      <h2 class="tasks-list-heading">Tasks List</h2>
+      <p class="projects-heading">My projects</p>
       <div class="task-list"></div>
       <div class="add-task-second">
         <p>Add task</p>
@@ -34,6 +68,14 @@
         <input type="text" name="title" id="task-name" placeholder="Buy some bread" />
         <label for="task-description">Task description:</label>
         <textarea name="description" id="task-description" rows="4" cols="2"></textarea>
+        <label for="task-category">Task category:</label>
+        <select name="category" id="task-category">
+          <option value="fitness">Fitness</option>
+          <option value="groceries">Groceries</option>
+          <option value="appointments">Appointments</option>
+          <option value="work">Work</option>
+          <option value="miscellaneous">Miscellaneous</option>
+        </select>
         <label for="task-date">Deadline date:</label>
         <input type="date" name="date" id="task-date" />
         <div class="form-buttons">
