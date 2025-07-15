@@ -274,11 +274,5 @@ function displayNoTodayMessage() {
 }
 
 
-// Profile name input
-
-
-
-
-
 // Display no task message
 displayNoTasksMessage();
