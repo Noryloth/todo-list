@@ -30,28 +30,92 @@ body {
 
 
 /* Left container links */
-.first-links {
+.first-links, .second-links {
     display: grid;
     gap: 8px;
     margin: 2rem 0 2rem 0;
 }
 
-.first-links p, .add-task-second p {
+.profile img {
+    width: 50px;
+    filter: opacity(0.75);
+}
+
+.add-task-div img {
+    width: 36px;
+}
+
+.today-div img, .view-all-div img, .second-links img {
+    width: 28px;
+}
+
+.search-div {
+    display: flex;
+    gap: 8px;
+}
+
+.search-bar {
+    padding: 0.5em 0 0.5em 0.25em;
     border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.307);
+    background-color: rgb(255, 255, 255);
+    color: oklch(37.3% 0.034 259.733);
+    font-size: 0.75em;
+}
+
+.search-div button {
+    font-size: 0.85em;
+    padding: 0.3em 0.4em;
+    color: oklch(37.3% 0.034 259.733);
+    background-color: rgb(115, 115, 115);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.307);
+    cursor: pointer;
+}
+
+.search-div button:hover {
+    background-color: rgba(115, 115, 115, 0.816);
+}
+
+.search-div button:active {
+    margin: 0.1em 0 -0.1em 0;
+}
+
+.search-div button img {
+    display: flex;
+    width: 20px;
+    filter: invert(10);
+}
+
+.first-links div, .second-links div, .profile p {
+    border-radius: 8px;
+}
+
+.first-links p, .second-links p, .profile p, .add-task-second p {
     padding: 0.25em 0.25em 0.25em 0;
 }
 
-.first-links p:first-of-type {
+.first-links div, .second-links div, .profile {
+    display: flex;
+    align-items: center;
+    gap: 4px
+}
+
+.add-task-div p {
     color: rgb(61, 150, 198);
     font-weight: 550;
 }
 
-.first-links p:hover {
+.first-links div:hover, .second-links div:hover, .profile p:hover {
     background-color: rgb(228, 240, 245);
     cursor: pointer;
 }
 
-.second-links p:first-of-type {
+.first-links div:active, .second-links div:active, .profile p:active {
+    background-color: rgba(228, 240, 245, 0.534);
+}
+
+.projects-heading {
     font-weight: 600;
 }
 
@@ -60,7 +124,7 @@ body {
     color: rgb(45, 45, 45);
 }
 
-.heading {
+.projects-heading {
     padding: 2em 0 0.25em 0;
     font-weight: 550;
 }
@@ -76,7 +140,7 @@ body {
 
 .task-item {
     display: grid;
-    grid-template-columns: 6fr 1fr;
+    grid-template-columns: 5fr 1fr 1fr;
     gap: 6px;
     padding: 0.75em 0 0.75em 0;
     margin: 0.5em 0 0.5em 0;
@@ -139,7 +203,7 @@ dialog form {
     gap: 8px;
 }
 
-form input, form textarea {
+form input, form textarea, form select {
     padding: 0.5em;
     border-radius: 8px;
     border: none;
@@ -177,8 +241,9 @@ form button:active {
 
 /* Remove task button */
 .remove-task {
-    display: flex;
-    justify-self: flex-end;
+    display: grid;
+    grid-column: 3 / 3;
+    justify-self: center;
     align-self: center;
 }
 
@@ -201,3 +266,19 @@ form button:active {
     margin: 0.1em 0 -0.1em 0;
     background-color: rgba(246, 225, 225, 0.577);
 }
+
+
+/* Task category */
+.task-category {
+    display: grid;
+    grid-column: 2 / 2;
+    justify-content: center;
+    align-items: center;    
+    /* margin: 0 1em 0 0; */
+}
+
+.task-category p {
+    font-size: 0.7em;
+    color: oklch(37.306% 0.03436 260.191 / 0.537);
+}
+
