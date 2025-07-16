@@ -303,9 +303,5 @@ function displayNoTodayMessage() {
 }
 
 
-// Local storage
-const itemsArray = localStorage.getItem("items") ? JSON.parse(localStorage.getItem("items")) : [];
-
-
 // Display no task message
 displayNoTasksMessage();
