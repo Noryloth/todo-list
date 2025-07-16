@@ -7,8 +7,30 @@ const dialog = document.getElementById('dialog');
 const tasks = document.querySelector('.task-list');
 
 
-// Tasks array
-const myTasks = [];
+// Profile name local storage
+const profileName = document.getElementById('name');
+
+profileName.addEventListener('blur', () => {
+    localStorage.setItem('profile-name', profileName.innerHTML);
+})
+
+document.addEventListener('DOMContentLoaded', () => {
+    const savedProfileName = localStorage.getItem('profile-name');
+
+    if (savedProfileName) {
+        profileName.innerHTML = savedProfileName;
+    }
+})
+
+
+// Tasks array with local storage
+const myTasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+
+// Tasks local storage display
+if (localStorage.getItem('tasks')) {
+    displayTasks(myTasks);
+}
 
 
 // Tasks class
@@ -117,6 +139,9 @@ submitBtn.addEventListener("click", (event) => {
 // Add task to an array
 function addTaskToArray(newTask) {
     myTasks.push(newTask);
+    
+    // Local storage
+    localStorage.setItem('tasks', JSON.stringify(myTasks))
     displayTasks(myTasks);
 }
 
@@ -135,6 +160,8 @@ globalThis.removeTask = removeTask;
 
 function removeTask(i) {
     myTasks.splice(i, 1);
+    localStorage.setItem('tasks', JSON.stringify(myTasks))
+
     displayTasks(myTasks);
     displayNoTasksMessage();
 }
@@ -145,6 +172,8 @@ globalThis.completeTask = completeTask;
 
 function completeTask(i) {
     myTasks.splice(i, 1);
+    localStorage.setItem('tasks', JSON.stringify(myTasks))
+
     displayTasks(myTasks);
     alert("Task is completed!");
     displayNoTasksMessage();
@@ -272,6 +301,10 @@ function displayNoTodayMessage() {
         tasks.appendChild(noTasksMessage);
     }
 }
+
+
+// Local storage
+const itemsArray = localStorage.getItem("items") ? JSON.parse(localStorage.getItem("items")) : [];
 
 
 // Display no task message
