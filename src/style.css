@@ -9,7 +9,8 @@
 /* General */
 body {
     font-family: Inter, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: oklch(37.3% 0.034 259.733);
+    --text-color: oklch(37.3% 0.034 259.733);
+    color: var(--text-color);
     display: grid;
     grid-template-columns: 1fr 3fr;
     font-size: 1.25em;
@@ -36,6 +37,7 @@ body {
     margin: 2rem 0 2rem 0;
 }
 
+/* Left links icons */
 .profile img {
     width: 50px;
     filter: opacity(0.75);
@@ -49,24 +51,21 @@ body {
     width: 28px;
 }
 
-.search-div {
-    display: flex;
-    gap: 8px;
-}
-
+/* Search bar */
 .search-bar {
     padding: 0.5em 0 0.5em 0.25em;
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, 0.307);
     background-color: rgb(255, 255, 255);
-    color: oklch(37.3% 0.034 259.733);
+    color: var(--text-color);
     font-size: 0.75em;
+    width: clamp(200px, 25vw, 50em);
 }
 
 .search-div button {
     font-size: 0.85em;
     padding: 0.3em 0.4em;
-    color: oklch(37.3% 0.034 259.733);
+    color: var(--text-color);
     background-color: rgb(115, 115, 115);
     border-radius: 8px;
     border: 1px solid rgba(0, 0, 0, 0.307);
@@ -87,6 +86,7 @@ body {
     filter: invert(10);
 }
 
+/* First, second links, profile divs */
 .first-links div, .second-links div, .profile p {
     border-radius: 8px;
 }
@@ -155,22 +155,22 @@ body {
 
 .description {
     font-size: 0.75em;
-    color: oklch(37.306% 0.03436 260.191 / 0.734);
+    color: var(--text-color);
 }
 
 .date {
     font-size: 0.5em;
-    color: oklch(37.306% 0.03436 260.191 / 0.734);
+    color: var(--text-color);
 }
 
 .no-tasks-message {
     font-size: 0.85em;
-    color: oklch(37.306% 0.03436 260.191 / 0.64);
+    color: oklch(37.306% 0.03436 260.191 / 0.595);
     padding: 1em 0 1em 0;
 }
 
 .add-task-second {
-    color: oklch(37.306% 0.03436 260.191 / 0.412);
+    color: var(--text-color);
 }
 
 .add-task-second p:hover {
@@ -190,7 +190,7 @@ dialog {
     align-self: center;
     padding: 2rem;
     background-color: rgb(250, 252, 255);
-    color: oklch(37.3% 0.034 259.733);
+    color: var(--text-color);
     border: none;
     border-radius: 8px;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.164);
@@ -208,7 +208,7 @@ form input, form textarea, form select {
     border-radius: 8px;
     border: none;
     background-color: rgb(232, 238, 249);
-    color: oklch(37.3% 0.034 259.733);
+    color: var(--text-color);
 }
 
 .form-buttons {
@@ -222,7 +222,7 @@ form input, form textarea, form select {
 form button {
     font-size: 0.85em;
     padding: 0.3em 0.4em;
-    color: oklch(37.3% 0.034 259.733);
+    color: var(--text-color);
     background-color: rgb(232, 238, 249);
     border-radius: 8px;
     border: none;
@@ -279,6 +279,6 @@ form button:active {
 
 .task-category p {
     font-size: 0.7em;
-    color: oklch(37.306% 0.03436 260.191 / 0.537);
+    color: var(--text-color);
 }
 
